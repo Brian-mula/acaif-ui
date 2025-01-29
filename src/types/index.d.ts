@@ -10,8 +10,9 @@ declare type CompaignType = {
     isActive:boolean;
     totalPosts:number;
     performance:PerformanceType[];
-    createBy:CampaignCreater;
+    createdBy:CampaignCreater;
     updatedAt:string;
+    createdAt:string;
 }
 
 declare type PerformanceType={

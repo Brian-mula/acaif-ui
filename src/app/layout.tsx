@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import "./globals.css";
+import StoreProvider from "./StoreProvider";
 
 const poppins = Poppins({
   weight:['100','700','900','400'],
@@ -22,7 +24,18 @@ export default function RootLayout({
       <body
         className={poppins.className}
       >
-        {children}
+        <StoreProvider>
+        <Toaster
+                toastOptions={{
+                  style: {
+                    fontSize: '10px'
+                  }
+                }}
+                position="top-right"
+              />
+          {children}
+        </StoreProvider>
+        
       </body>
     </html>
   );

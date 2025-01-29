@@ -1,4 +1,5 @@
-import { Home, TimerIcon } from "lucide-react"
+import { format } from "date-fns";
+import { Home, TimerIcon } from "lucide-react";
 
 
 export const appLinks = [
@@ -13,3 +14,9 @@ export const appLinks = [
         icon: TimerIcon
     }
 ]
+
+export const isClient = typeof window !== 'undefined';
+
+export const dateFormatter = (date: string) => {
+    return format(new Date(date), 'dd/MM/yyyy');
+}
